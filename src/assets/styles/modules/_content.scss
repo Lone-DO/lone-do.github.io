@@ -1,0 +1,27 @@
+@import './projects.scss';
+.App_content {
+	font-family: $Roboto;
+	margin: 0 auto;
+	width: 95%;
+	padding: 1rem 0;
+	transition:
+		width 0.3s ease-in-out,
+		font-size 0.3s ease-in-out,
+		background-color 0.3s ease-in-out;
+	@media #{$atMedium} {
+		width: 80%;
+		margin: auto;
+		background-color: rgba($ghostBlue, 0.8);
+	}
+
+	&-title {
+		text-align: center;
+		font-size: 2rem;
+		@media #{$atMedium} {
+			font-size: 2.5rem;
+		}
+		@media #{$atLarge} {
+			font-size: 3rem;
+		}
+	}
+}
