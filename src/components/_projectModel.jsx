@@ -13,7 +13,7 @@ const ProjectModel = (props) => {
 			{props.type === 'app' ? (
 				<button className='btn --transparent modal-open' onClick={() => props.modal(props.launch)}>
 					<span>
-						Launch <i class='fa-solid fa-circle-play' />
+						Launch <i className='fa-solid fa-circle-play' />
 					</span>
 				</button>
 			) : props.launch !== 'disabled' ? (
@@ -30,14 +30,14 @@ const ProjectModel = (props) => {
 
 			<a href={props.github}>
 				<button className='btn --transparent'>
-					Github <i class='fa-solid fa-code'></i>
+					Github <i className='fa-solid fa-code'></i>
 				</button>
 			</a>
 			<button
 				className='btn --transparent'
 				onClick={() => props.toggle(`.App_content_projects_${props.title}`, 'article')}
 			>
-				<i class='fa-solid fa-comment-dots'></i>
+				<i className='fa-solid fa-comment-dots'></i>
 			</button>
 			<article className={`App_content_projects-modules ${props.title}-modules`}>{modules}</article>
 		</section>
