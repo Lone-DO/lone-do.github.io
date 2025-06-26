@@ -18,11 +18,13 @@ class ACTunes extends Component {
 	}
 
 	componentDidMount() {
-		fetch(
-			'https://api.mlab.com/api/1/databases/lone-do/collections/albums?apiKey=9P6rUGDfq5OxFXag9RZYNkk3U2vF6IT0',
-		)
-			.then((res) => res.json())
-			.then((res) => this.setState({ videoData: res, isLoaded: true }));
+		/** TODO: MLabs was taken down years ago and merged into MongoDB, must rebuild database */
+		// 	fetch(
+		// 		'https://api.mlab.com/api/1/databases/lone-do/collections/albums?apiKey=9P6rUGDfq5OxFXag9RZYNkk3U2vF6IT0',
+		// 	)
+		// 		.then((res) => res.json())
+		// 		.then((res) => this.setState({ videoData: res, isLoaded: true }));
+		this.setState({ isLoaded: true });
 	}
 
 	renderContent() {
