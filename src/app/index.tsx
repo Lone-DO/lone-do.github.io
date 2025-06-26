@@ -12,27 +12,26 @@ import AlbumNew from '../components/projects/_actunes/albums/AlbumNew';
 import Footer from '../components/Footer';
 
 function App() {
-	const [modal, setModal] = useState('');
+	const [TargetModal, setModal] = useState<string | null>('');
 	const [showModal, setModalVisibility] = useState(false);
 
-	function toggleModal(content = '') {
+	function toggleModal(Content: string | null = null) {
 		try {
-			if (content.length === 0) {
-				setModalVisibility(false);
-				// modal.style.opacity = 0;
-				// modal.style.visibility = "hidden";
-			} else {
-				setModalVisibility(true);
-
-				// modal.style.opacity = 1;
-				// modal.style.visibility = "visible";
-			}
-
-			setModal(content);
+			setModalVisibility(Boolean(Content));
+			setModal(() => Content);
 		} catch (err) {
 			alert(err);
 		}
 	}
+
+	function GetModal() {
+		if (!showModal || !TargetModal) return <span></span>;
+		/** IF Composite */
+		if (TargetModal.length !== undefined) return <TargetModal />;
+		/** Else */
+		return TargetModal;
+	}
+
 	return (
 		<div className='App'>
 			<div className='App-body'>
@@ -47,7 +46,7 @@ function App() {
 					<span className='modal__close' onClick={() => toggleModal('')}>
 						X
 					</span>
-					{modal}
+					<GetModal />
 				</div>
 			</div>
 		</div>
