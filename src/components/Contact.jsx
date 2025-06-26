@@ -5,12 +5,12 @@ const Contact = () => {
 		<article className='App_content_contact'>
 			<h3 className='_title'>
 				<span>
-					<i class='fa-solid fa-id-card' /> Get in <strong>Touch</strong>
+					<i className='fa-solid fa-id-card' /> Get in <strong>Touch</strong>
 				</span>
 			</h3>
 
 			<address>
-				Email: <a href='mailto:lotussythe@gmail.com'>lotussythe@gmail.com</a>
+				Email: <a href='mailto:citizin@outlook.com'>citizin@outlook.com</a>
 				<br />
 				Github: <a href='https://github.com/Lone-DO'>https://github.com/Lone-DO</a>
 				<br />
