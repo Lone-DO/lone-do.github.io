@@ -18019,7 +18019,7 @@ const Intro = () => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "App_content-title", children: "Shawn Losovoj" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("i", { className: "App_content-title", children: "Software Engineer | FrontEnd Architect" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("i", { className: "App_content-title", children: "Migration Specialist | Technical Consultant" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "I'm a technology enthusiast & Software Engineer who believes in crafting solutions that helps people's business & personal lives easier. My skill set is adaptable to what fits your needs and gets the job done. My Code is built with both clean practices & modularity, and with the end-user in mind for responsiveness & accessibility." }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "I'm a technology enthusiast and software engineer who believes in crafting solutions that make people's business and personal lives easier. My skill set is adaptable to meet your needs and get the job done. My Code is built with both clean practices & modularity, and with the end-user in mind for responsiveness & accessibility." }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("hr", {})
   ] });
 };
@@ -18829,11 +18829,11 @@ const appData = [
     title: "ACTunesApp",
     name: "Animal Crossing Tunes",
     headline: "Second Project, built using EmberCLI & MongoDB",
-    description: "Creative application that brings the daily soundtracks of Animal Crossing back, and now it's here to stay for our daily endeavors unlike never before. Able to choose smoothly between the user's desired Generation, from the hit classics like, original Animal Crossing from GameCube, to City Folk from the WII U, and the latest New Leaf on the 3DS. Built with the MEEN stack, backend API through Mongodb.",
+    description: "Creative application that brings the daily soundtracks of Animal Crossing back, and now it's here to stay for our daily endeavors, unlike never before. Able to choose smoothly between the user's desired Generation, from the hit classics like original Animal Crossing from GameCube, to City Folk from the WII U, and the latest New Leaf on the 3DS. Built with the MERN stack, the backend API utilizes MongoDB as its database.",
     launch: ACTunes,
     github: "https://github.com/Lone-DO/animalcrossing",
     modules: [
-      "MEEN Stack",
+      "MERN Stack",
       "Mongo",
       "Express",
       "Ember.js",
@@ -18888,7 +18888,7 @@ const appData = [
     title: "CSharp",
     name: "C# Shorts",
     headline: "Projects built while studying C# via Treehouse",
-    description: "My small projects, short and sweet using node & C#. After going a year with JavaScript, picking up this language felt natural for what exposure i managed to dabble into.",
+    description: "My small projects, short and sweet, using Node & C#. After going a year with JavaScript, picking up this language felt natural, given the exposure I managed to dabble in.",
     launch: "disabled",
     github: "https://github.com/Lone-DO/Treehouse/tree/master/C%23",
     modules: ["Node.js", "C#", ".Net"]
@@ -18899,7 +18899,7 @@ const appData = [
     title: "UndertaleApp",
     name: "Undertale",
     headline: "First project, built using Ember.js",
-    description: "Recreational Project that restructures the original Site to a more update formality. Built using Ember, my first project I've built as a Developer. Complete overhaul of hands-on coding and features that utilize API information for the user's discretion. Allows fans to post 'Mail' on the site for the Undertale Devs to see, and others to respond to. Built with Ember.js, Backend localStorage.",
+    description: "Recreational Project that restructures the original site into a more updated formality. Built using Ember, my first Project I've built as a Developer. Complete overhaul of hands-on coding and features that utilize API information for the user's discretion. Allows fans to post 'Mail' on the site for the Undertale Devs to see, and others to respond to. Built with Ember.js, Backend localStorage.",
     launch: "https://lone-do.github.io/#/undertale/",
     github: "https://github.com/Lone-DO/Undertale-Recreation",
     modules: ["HTML5", "CSS3", "JavaScript - ES6", "Ember.js", "localStorage", "SASS", "jQuery"]
