@@ -1,14 +1,10 @@
 import { useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
-
 import '../assets/styles/vendor/materialize/materialize.scss';
 import '../assets/styles/App.scss';
 
 /** Components */
 import Header from '../components/Header.jsx';
 import Landing from '../components/Landing';
-import ACTunesApp from '../components/projects/_actunes/index';
-import AlbumNew from '../components/projects/_actunes/albums/AlbumNew';
 import Footer from '../components/Footer';
 
 function App() {
@@ -38,10 +34,6 @@ function App() {
 				<Header modal={toggleModal} />
 				<Landing modal={toggleModal} />
 				<Footer modal={toggleModal} />
-				<Routes>
-					<Route path={`/actunes`} Component={ACTunesApp} />
-					<Route path={`/actunes/new`} Component={AlbumNew} />
-				</Routes>
 				<div className='modal' data-visible={showModal || null}>
 					<span className='modal__close' onClick={() => toggleModal('')}>
 						X
