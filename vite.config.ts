@@ -25,10 +25,12 @@ export default defineConfig({
 			{
 				find: /^@\//,
 				replacement: '@/',
-				async customResolver(source) {
+				async customResolver(source, module) {
 					let resolvedPath = '';
 					/** Modify Alias based on Nested Module */
-					resolvedPath = path.resolve(source.replace('@/', './src/'));
+					if (module?.includes('project-ac')) {
+						resolvedPath = path.resolve(source.replace('@/', './project-ac/src/'));
+					} else resolvedPath = path.resolve(source.replace('@/', './src/'));
 					/** Return using Vite/RollupOptions resolve handler
 					 * https://rollupjs.org/plugin-development/#this-resolve
 					 */
@@ -38,11 +40,11 @@ export default defineConfig({
 		],
 	},
 	css: {
-      devSourcemap: true,
-      preprocessorOptions: {
-        scss: {
-          sourceMapIncludeSources: true,
-        },
-      },
-    },
+		devSourcemap: true,
+		preprocessorOptions: {
+			scss: {
+				sourceMapIncludeSources: true,
+			},
+		},
+	},
 });

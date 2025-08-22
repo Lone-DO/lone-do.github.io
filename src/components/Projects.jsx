@@ -1,31 +1,22 @@
 import React, { Component } from 'react';
 
-import appData from './projects/appData';
+import appData from '../assets/data/appData.js';
 import ProjectModel from './_projectModel.jsx';
 
 class Projects extends Component {
-	constructor(props) {
+	constructor() {
 		super();
 		this.state = {
 			apps: appData,
 		};
 	}
 
-	toggleElement(_class, _target) {
-		let elem = document.querySelector(`${_class} ${_target}`);
-		if (elem.style.display === 'block') {
-			elem.style.display = 'none';
-		} else {
-			elem.style.display = 'block';
-		}
-	}
-
 	render() {
-		const Applications = this.state.apps.map((app) => {
+		const Applications = this.state.apps.map((app, index) => {
 			return (
 				<ProjectModel
 					modal={this.props.modal}
-					key={app.title + app.id}
+					key={app.title + index}
 					title={app.title}
 					name={app.name}
 					headline={app.headline}
@@ -34,7 +25,6 @@ class Projects extends Component {
 					github={app.github}
 					modules={app.modules}
 					type={app.type}
-					toggle={this.toggleElement}
 				/>
 			);
 		});
