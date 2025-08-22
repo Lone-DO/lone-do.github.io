@@ -1,15 +1,14 @@
 .App_content_projects {
-	margin-bottom: 2rem;
-	padding-bottom: 1rem;
 	&:not(:last-child) {
 		border-bottom: 2px solid white;
 	}
 
 	@media #{$atMedium} {
-		margin: 0 3rem;
+		padding: 0 3rem;
 	}
 
 	@media #{$atLarge} {
+		gap: 0.5rem;
 		font-size: 1.48rem;
 		display: flex;
 		flex-wrap: wrap;
@@ -30,9 +29,27 @@
 		.App_content-title {
 			flex-basis: 100%;
 		}
+
+		article {
+			flex: 1;
+			gap: 0.5rem;
+			display: flex;
+			flex-direction: column;
+
+			padding: 1rem;
+			min-width: 500px;
+			border-radius: 8px;
+			border: 1px solid $primaryBlue;
+			box-shadow: 0 0 4px 1px $primaryBlue;
+
+			& > * {
+				margin: 0;
+			}
+		}
 	}
-	&-title {
-		margin: 1rem 0;
+	.App_content-title {
+		margin: 0;
+		padding: 0 1rem 1rem;
 	}
 
 	&-modules {

@@ -12,35 +12,40 @@ const ProjectModel = (props) => {
 		<article key={props.title} className={`App_content_projects_${props.title}`}>
 			<h3 className='App_content_projects-title _title'>{props.name}</h3>
 			<p className='App_content_projects-headline'>{props.headline}</p>
-			<p className='App_content_projects-description'>{props.description}</p>
+			<i className='App_content_projects-description'>{props.description}</i>
 
-			{props.type === 'app' ? (
-				<button className='btn --transparent modal-open' onClick={() => props.modal(props.launch)}>
-					<span>
-						Launch <i className='fa-solid fa-circle-play' />
-					</span>
-				</button>
-			) : props.launch !== 'disabled' ? (
-				<a href={props.launch} target='_blank'>
-					<button className='btn --transparent'>
+			<div>
+				{props.type === 'app' ? (
+					<button
+						className='btn --transparent modal-open'
+						onClick={() => props.modal(props.launch)}
+					>
 						<span>
-							Preview <i className='fa-solid fa-up-right-from-square' />
+							Launch <i className='fa-solid fa-circle-play' />
 						</span>
 					</button>
-				</a>
-			) : (
-				<br></br>
-			)}
+				) : props.launch !== 'disabled' ? (
+					<a href={props.launch} target='_blank'>
+						<button className='btn --transparent'>
+							<span>
+								Preview <i className='fa-solid fa-up-right-from-square' />
+							</span>
+						</button>
+					</a>
+				) : (
+					<br></br>
+				)}
 
-			<a href={props.github} target='_blank'>
-				<button className='btn --transparent' title='open github Link'>
-					Github <i className='fa-solid fa-code'></i>
+				<a href={props.github} target='_blank'>
+					<button className='btn --transparent' title='open github Link'>
+						Github <i className='fa-solid fa-code'></i>
+					</button>
+				</a>
+				<button className='btn --transparent' title='show project tags' onClick={toggleDetails}>
+					<i className='fa-solid fa-comment-dots'></i>
 				</button>
-			</a>
-			<button className='btn --transparent' title='show project tags' onClick={toggleDetails}>
-				<i className='fa-solid fa-comment-dots'></i>
-			</button>
-			{details}
+				{details}
+			</div>
 		</article>
 	);
 };
