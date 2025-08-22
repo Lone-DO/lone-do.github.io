@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ProjectModel = (props) => {
 	const modules = props.modules.map((module) => {
 		return <span key={props.title + module}>{module}</span>;
 	});
+	const [isVisible, setVisible] = useState(false);
+
+	const toggleDetails = () => setVisible(!isVisible);
+	const details = isVisible ? <p className='App_content_projects-modules'>{modules}</p> : null;
 	return (
-		<section key={props.title} className={`App_content_projects_${props.title}`}>
+		<article key={props.title} className={`App_content_projects_${props.title}`}>
 			<h3 className='App_content_projects-title _title'>{props.name}</h3>
 			<p className='App_content_projects-headline'>{props.headline}</p>
 			<p className='App_content_projects-description'>{props.description}</p>
@@ -17,7 +21,7 @@ const ProjectModel = (props) => {
 					</span>
 				</button>
 			) : props.launch !== 'disabled' ? (
-				<a href={props.launch}>
+				<a href={props.launch} target='_blank'>
 					<button className='btn --transparent'>
 						<span>
 							Preview <i className='fa-solid fa-up-right-from-square' />
@@ -28,19 +32,16 @@ const ProjectModel = (props) => {
 				<br></br>
 			)}
 
-			<a href={props.github}>
-				<button className='btn --transparent'>
+			<a href={props.github} target='_blank'>
+				<button className='btn --transparent' title='open github Link'>
 					Github <i className='fa-solid fa-code'></i>
 				</button>
 			</a>
-			<button
-				className='btn --transparent'
-				onClick={() => props.toggle(`.App_content_projects_${props.title}`, 'article')}
-			>
+			<button className='btn --transparent' title='show project tags' onClick={toggleDetails}>
 				<i className='fa-solid fa-comment-dots'></i>
 			</button>
-			<article className={`App_content_projects-modules ${props.title}-modules`}>{modules}</article>
-		</section>
+			{details}
+		</article>
 	);
 };
 
