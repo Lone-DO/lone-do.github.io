@@ -1,0 +1,14 @@
+name: Call Playwright Tests
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  call-playwright-tests:
+    uses: lone-do/playwright/.github/workflows/remote-dispatch.yml@main
+    with:
+      sha: ${{ github.sha }}
+      environment: mac-dev
+      repository: ${{ github.repository }}
+      # token: ${{ secrets.GITHUB_TOKEN }}

@@ -35,5 +35,6 @@ export default antfu({
 			case: 'kebabCase',
 			ignore: ['README.md'],
 		}],
+		'pnpm/yaml-enforce-settings': 0,
 	},
 });
