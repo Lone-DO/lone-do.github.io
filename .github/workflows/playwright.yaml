@@ -3,6 +3,15 @@ on:
   pull_request:
     branches:
       - main
+  workflow_dispatch:
+    inputs:
+      sha:
+        description: 'The commit SHA to run the tests against'
+        required: true
+      environment:
+        description: 'The environment to run the tests in'
+        default: 'mac-dev'
+        required: true
 
 jobs:
   call-playwright-tests:
