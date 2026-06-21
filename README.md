@@ -86,3 +86,7 @@ Git Hooks for validating code before allowing user to commit/push changes to ser
 ### lint-staged
 
 Hook to validate **only modified files** for linting problems
+
+### Workflows
+
+Remotely triggers playwright in remote repository, on PULL_REQUEST
