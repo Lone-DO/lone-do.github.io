@@ -1,7 +1,7 @@
-import { defineStore } from 'pinia';
-import { ref } from 'vue';
-
 import type { Location, LocationChild } from '@/lib/types';
+import { defineStore } from 'pinia';
+
+import { ref } from 'vue';
 
 import { FINDER_LOCATIONS } from '@/lib/constants';
 import { deepCopy } from '@/lib/helpers/deep-copy.ts';

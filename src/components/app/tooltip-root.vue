@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-
 import type { TooltipProps } from '@/lib/types';
+
+import { computed } from 'vue';
 
 import { AppTooltip } from '@/components';
 import { DEFAULT_TOOLTIP_HIDE, DEFAULT_TOOLTIP_SHOW } from '@/lib/constants';

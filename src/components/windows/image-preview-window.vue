@@ -1,7 +1,7 @@
 <script lang='ts' setup>
-import { computed } from 'vue';
-
 import type { LocationChild } from '@/lib/types/index.ts';
+
+import { computed } from 'vue';
 
 import { WindowBase } from '@/components';
 import { useWindowStore } from '@/stores/index.ts';

@@ -1,8 +1,8 @@
 <!-- suppress CssUnresolvedCustomProperty -->
 <script lang='ts' setup>
-import { computed, ref } from 'vue';
-
 import type { Project } from '@/lib/types';
+
+import { computed, ref } from 'vue';
 
 import { AppStoreIcon } from '@/components';
 
