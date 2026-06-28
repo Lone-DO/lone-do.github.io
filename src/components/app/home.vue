@@ -21,7 +21,7 @@ function openItem(item: LocationChild) {
 </script>
 
 <template>
-	<section id="home" class="relative w-full">
+	<section id="home" class="relative w-full max-sm:invisible">
 		<WindowFileList
 			:items="projects"
 			class="h-full w-full"

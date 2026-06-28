@@ -10,7 +10,8 @@ const subTitleRef = useTemplateRef('subtitle');
 
 function setupTextHover(container: HTMLElement | null, type: 'title' | 'subtitle') {
 	if (container) {
-		const letters = [...container.children];
+		const children = Array.from(container.children);
+		const letters = type === 'title' ? children : ([Array.from(children[0]?.children || []), Array.from(children[1]?.children || [])]).flat();
 		const { min, max, default: baseWeight } = FONT_WEIGHTS[type];
 
 		const animateLetter = (letter: Element, weight: number, duration = 0.25) => {
@@ -59,14 +60,22 @@ onMounted(() => {
 		<p
 			id="welcome_subtitle"
 			ref="subtitle"
-			class="text-2xl"
+			class="text-2xl flex flex-wrap flex-col xs:flex-row"
 		>
-			<AppTextUnpacker
-				text="Hey, I'm Shawn! Welcome to my"
-				:base-weight="FONT_WEIGHTS.subtitle.default"
-			/>
+			<span>
+				<AppTextUnpacker
+					text="Hey, I'm Shawn! "
+					:base-weight="FONT_WEIGHTS.subtitle.default"
+				/>
+			</span>
+			<span>
+				<AppTextUnpacker
+					text="Welcome to my"
+					:base-weight="FONT_WEIGHTS.subtitle.default"
+				/>
+			</span>
 		</p>
-		<h1 ref="title" class="text-9xl">
+		<h1 ref="title" class="sm:text-9xl text-3xl xs:text-7xl">
 			<AppTextUnpacker
 				:base-weight="FONT_WEIGHTS.title.default"
 				text="portfolio"

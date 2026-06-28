@@ -68,4 +68,8 @@ header {
 		@apply max-sm:hidden;
 	}
 }
+
+#app-header_navigation {
+	@apply max-sm:hidden;
+}
 </style>
