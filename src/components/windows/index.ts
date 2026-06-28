@@ -6,6 +6,6 @@ import TextPreviewWindow from './text-preview-window.vue';
 import WindowBase from './window-base.vue';
 import WindowFileList from './window-file-list.vue';
 
-export * from './appStore';
+export * from './app-store/index.ts';
 export * from './finder';
 export { ContactWindow, ImagePreviewWindow, ResumeWindow, TerminalWindow, TextPreviewWindow, WindowBase, WindowFileList };

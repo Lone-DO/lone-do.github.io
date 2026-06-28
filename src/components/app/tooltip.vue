@@ -1,10 +1,10 @@
 <script lang='ts' setup>
 import type { Instance } from '@popperjs/core';
 
-import { createPopper } from '@popperjs/core';
-import { onUnmounted, ref, useTemplateRef, watch } from 'vue';
-
 import type { TooltipProps, TooltipTarget } from '@/lib/types';
+import { createPopper } from '@popperjs/core';
+
+import { onUnmounted, ref, useTemplateRef, watch } from 'vue';
 
 import { DEFAULT_TOOLTIP_HIDE, DEFAULT_TOOLTIP_SHOW } from '@/lib/constants';
 

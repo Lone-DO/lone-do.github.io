@@ -1,7 +1,7 @@
-import { defineStore } from 'pinia';
-import { ref } from 'vue';
-
 import type { TooltipOptions, TooltipTarget } from '@/lib/types';
+import { defineStore } from 'pinia';
+
+import { ref } from 'vue';
 
 export const useTooltipStore = defineStore('tooltip-registry', () => {
 	const initialState: TooltipOptions = {

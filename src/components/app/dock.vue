@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import gsap from 'gsap';
-import { onMounted, onUnmounted, ref, useTemplateRef } from 'vue';
-
 import type { DockApp, DockListeners } from '@/lib/types';
+import gsap from 'gsap';
+
+import { onMounted, onUnmounted, ref, useTemplateRef } from 'vue';
 
 import { DOCK_APPS, FINDER_LOCATIONS } from '@/lib/constants';
 import { useWindowStore } from '@/stores';

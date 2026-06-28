@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
-
 import type { Project } from '@/lib/types';
+
+import { computed, ref } from 'vue';
 
 import { AppStoreDetails, AppStoreList, AppStoreMenu, WindowBase } from '@/components';
 import { DOCK_APPS } from '@/lib/constants/index.ts';

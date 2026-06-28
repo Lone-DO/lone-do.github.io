@@ -1,7 +1,7 @@
-import { defineStore } from 'pinia';
-import { ref } from 'vue';
-
 import type { WindowData } from '@/lib/types';
+import { defineStore } from 'pinia';
+
+import { ref } from 'vue';
 
 import { INITIAL_Z_INDEX, WINDOW_CONFIG } from '@/lib/constants';
 import { deepCopy } from '@/lib/helpers/deep-copy.ts';

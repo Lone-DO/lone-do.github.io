@@ -1,8 +1,7 @@
 <script lang='ts' setup>
-import Draggable from 'gsap/dist/Draggable';
-import { computed, onMounted, useSlots, useTemplateRef } from 'vue';
-
 import type { WINDOW_CONFIG } from '@/lib/constants';
+
+import { computed, useSlots } from 'vue';
 
 import WindowController from '@/components/windows/window-controller.vue';
 import { useWindowStore } from '@/stores';
@@ -20,19 +19,12 @@ const $slots = useSlots();
 const targetWindow = computed(() => $props.windowKey ? windowStore.windows[$props.windowKey] : null);
 
 const hideMenu = computed(() => !$slots.menu);
-
-const DOM = useTemplateRef('window');
-onMounted(() => {
-	Draggable.create(DOM.value, {
-		onPressInit: () => windowStore.focusWindow($props.windowKey),
-	});
-});
 </script>
 
 <template>
 	<section
 		v-if="targetWindow?.isOpen"
-		ref="window"
+		v-draggable="{ onPressInit: () => windowStore.focusWindow($props.windowKey), enabled: targetWindow?.isOpen }"
 		class="window absolute sm:min-w-100 sm:min-h-25 sm:max-w-full sm:max-h-full max-sm:w-full max-sm:h-full shadow-2xl drop-shadow-2xl"
 		:style="{ zIndex: `${targetWindow.zIndex}` }"
 		@mousedown="windowStore.focusWindow(windowKey)"
