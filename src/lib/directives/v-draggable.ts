@@ -1,6 +1,6 @@
 import type { Directive, DirectiveBinding } from 'vue';
 
-import Draggable from 'gsap/dist/Draggable';
+import { Draggable } from 'gsap/dist/Draggable';
 
 export const vDraggable: Directive = {
 	mounted(el: HTMLElement, binding: DirectiveBinding) {
@@ -8,7 +8,7 @@ export const vDraggable: Directive = {
 			const { enabled, ...opts } = binding.value;
 			try {
 				el.setAttribute('draggable', 'true');
-				Draggable.create(el, opts);
+				Draggable?.create?.(el, opts);
 			}
 			catch (e) {
 				console.error(e);
