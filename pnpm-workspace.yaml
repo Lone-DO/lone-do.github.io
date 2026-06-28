@@ -2,3 +2,8 @@ shellEmulator: true
 allowBuilds:
   esbuild: true
   vite-plugin-vue-tailwind-auto-reference: true
+minimumReleaseAgeExclude:
+  - '@vue/devtools-core@8.1.5'
+  - '@vue/devtools-kit@8.1.5'
+  - '@vue/devtools-shared@8.1.5'
+  - vite-plugin-vue-devtools@8.1.5
