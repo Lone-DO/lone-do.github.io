@@ -79,15 +79,21 @@ export const SOCIALS: SocialLink[] = [
 		class: 'bg-[#0d1117] text-[#ecf2f8]',
 	},
 	{
+		imgSrc: 'images/app-icons/randstad-logo.svg',
+		label: 'Gulp',
+		href: 'https://www.gulp.de/gulp2/g/spezialisten/profil/pv0knu4rf2',
+		class: 'bg-[#0f1941] text-white',
+	},
+	{
 		imgSrc: 'images/icons/linkedin.svg',
 		label: 'LinkedIn',
 		href: 'https://www.linkedin.com/in/lone-do',
 		class: 'bg-[#0077B5] text-white',
 	},
 	{
-		imgSrc: 'images/app-icons/randstad-logo.svg',
-		label: 'Gulp',
-		href: 'https://www.gulp.de/gulp2/g/spezialisten/profil/pv0knu4rf2',
-		class: 'bg-[#0f1941] text-white',
+		imgSrc: 'images/app-icons/outlook.svg',
+		label: 'Outlook',
+		href: 'mailto:citizin@outlook.com',
+		class: 'bg-[#0078D4] text-white',
 	},
 ];
