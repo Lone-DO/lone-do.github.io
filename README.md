@@ -6,7 +6,7 @@ Make sure to install dependencies:
 
 ```bash
 # pnpm
-pnpm install
+pnpm install 
 ```
 
 ### Development Server
