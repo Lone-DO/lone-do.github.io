@@ -5,18 +5,18 @@ defineEmits(['maximize', 'close']);
 <template>
 	<div class="window_controller">
 		<button
+			v-tooltip="'close window'"
 			class="window_close"
-			title="close window"
 			@click.stop="$emit('close')"
 		/>
 		<button
 			class="window_minimize"
-			title="minimize window"
+			title="minimize window (WIP)"
 			disabled
 		/>
 		<button
 			class="window_maximize"
-			title="maximize window"
+			title="maximize window (WIP)"
 			disabled
 		/>
 	</div>

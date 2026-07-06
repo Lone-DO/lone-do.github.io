@@ -68,7 +68,7 @@ const navigate = (url: string) => url && window.open(url, '_blank');
 						v-for="[name = '', link = ''] in project.links"
 						:key="name + link"
 						:title="link"
-						class="rounded-3xl bg-blue-200! px-4 py-1 cursor-pointer flex gap-2"
+						class="rounded-3xl bg-blue-200! px-4 py-1 cursor-pointer flex gap-2 h-fit"
 						@click="navigate(link)"
 					>
 						<img
@@ -77,7 +77,7 @@ const navigate = (url: string) => url && window.open(url, '_blank');
 							alt=" "
 							loading="lazy"
 						>
-						<span class="text-sm font-medium text-blue-900!">{{ name }}</span>
+						<span class="text-sm font-medium text-blue-900! sm:text-nowrap">{{ name }}</span>
 					</button>
 				</div>
 			</div>

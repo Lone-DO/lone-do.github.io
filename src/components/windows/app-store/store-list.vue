@@ -20,9 +20,10 @@ defineEmits<{
 					v-for="item in opt.items"
 					:key="item.name"
 					class="flex gap-2 items-start min-h-10 flex-wrap"
+					@click="$emit('selectItem', item)"
 				>
 					<AppStoreIcon :src="item.imgSrc" />
-					<p class="flex flex-col">
+					<p class="flex flex-col text-ellipsis">
 						<span class="font-bold text-nowrap text-ellipsis">{{ item.name }}</span>
 						<span
 							class="text-ellipsis max-w-60 text-nowrap overflow-hidden text-gray-600 text-sm"
@@ -30,8 +31,7 @@ defineEmits<{
 						>{{ item.description }}</span>
 					</p>
 					<button
-						class="md:ml-auto max-md:mr-auto rounded-3xl bg-blue-200! text-blue-900! px-4 py-1 cursor-pointer text-sm"
-						@click="$emit('selectItem', item)"
+						class="md:ml-auto max-md:mr-auto rounded-3xl bg-blue-200! text-blue-900! px-4 py-1 cursor-pointer text-sm shrink-0"
 					>
 						View
 					</button>
