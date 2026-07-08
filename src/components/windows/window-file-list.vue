@@ -2,6 +2,7 @@
 import type { LocationChild } from '@/lib/types/index.ts';
 
 withDefaults(defineProps<{
+	id: string;
 	items?: LocationChild[];
 	childrenClasses?: string;
 	enableDraggable?: boolean;
@@ -15,7 +16,7 @@ defineEmits<{
 </script>
 
 <template>
-	<ul class="relative">
+	<ul :id class="window-file-list relative">
 		<li
 			v-for="item in items"
 			:key="item.id + item.label"

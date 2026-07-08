@@ -23,6 +23,7 @@ function openItem(item: LocationChild) {
 <template>
 	<section id="home" class="relative w-full max-sm:invisible">
 		<WindowFileList
+			id="home-file-list"
 			:items="projects"
 			class="h-full w-full"
 			children-classes="text-white"

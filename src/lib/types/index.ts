@@ -53,3 +53,14 @@ export type SocialLink = {
 	label: string;
 	class: string;
 };
+
+export type HTMLElementCustom = HTMLElement & {
+	$companions: CompanionElement[];
+	$gsapSetter?: (el: HTMLElementCustom, prop: string, value: string) => void;
+};
+
+export type CompanionElement = { element: HTMLElementCustom; x: number; y: number };
+
+export type DraggableInstance = ReturnType<typeof Draggable.get> & {
+	target: HTMLElementCustom;
+} | null;
