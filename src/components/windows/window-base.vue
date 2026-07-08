@@ -1,7 +1,7 @@
 <script lang='ts' setup>
 import type { WINDOW_CONFIG } from '@/lib/constants';
 
-import { computed, useSlots } from 'vue';
+import { computed, useSlots, useTemplateRef } from 'vue';
 
 import WindowController from '@/components/windows/window-controller.vue';
 import { useWindowStore } from '@/stores';
@@ -19,25 +19,32 @@ const $slots = useSlots();
 const targetWindow = computed(() => $props.windowKey ? windowStore.windows[$props.windowKey] : null);
 
 const hideMenu = computed(() => !$slots.menu);
+const window = useTemplateRef<HTMLElement>('window');
+const id = computed(() => `${$props.windowKey}-window`);
+const dragProps = computed(() => ({
+	edgeResistance: 0,
+	getParent: () => window.value,
+	enabled: targetWindow.value?.isOpen,
+	onPressInit: () => windowStore.focusWindow($props.windowKey),
+}));
 </script>
 
 <template>
 	<section
 		v-if="targetWindow?.isOpen"
-		v-draggable="{ onPressInit: () => windowStore.focusWindow($props.windowKey), enabled: targetWindow?.isOpen }"
+		:id="id"
+		ref="window"
+		v-draggable="{ ...dragProps, draggable: false }"
 		class="window absolute sm:min-w-100 sm:min-h-25 sm:max-w-full sm:max-h-full max-sm:w-full max-sm:h-full shadow-2xl drop-shadow-2xl"
-		:style="{ zIndex: `${targetWindow.zIndex}` }"
+		:style="{ zIndex: `${targetWindow.zIndex}0` }"
 		@mousedown="windowStore.focusWindow(windowKey)"
 	>
 		<aside v-if="!hideMenu" class="window_menu">
-			<WindowController
-				class="p-4"
-				@close="windowStore.closeWindow(windowKey)"
-			/>
+			<WindowController class="p-4" @close="windowStore.closeWindow(windowKey)" />
 			<slot name="menu" />
 		</aside>
 		<div class="window_body">
-			<header class="window_header">
+			<header v-draggable="{ ...dragProps }" class="window_header">
 				<WindowController
 					v-if="hideMenu"
 					@close="windowStore.closeWindow(windowKey)"
@@ -80,6 +87,7 @@ const hideMenu = computed(() => !$slots.menu);
 
 	.window_header {
 		@apply px-4 py-3 text-sm flex items-center rounded-t-lg bg-gray-50 border-b border-gray-200 select-none text-gray-400;
+		transform: none !important;
 	}
 
 	.window_title {
