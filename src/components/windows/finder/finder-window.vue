@@ -33,6 +33,7 @@ onUnmounted(() => {
 		</template>
 		<div class="flex h-full overflow-auto ">
 			<WindowFileList
+				id="finder-file-list"
 				:items="locationStore.selectedLocation?.children"
 				class="p-4 relative sm:w-xl overflow-x-auto w-4/5"
 				@select-item="locationStore.openItem($event)"
