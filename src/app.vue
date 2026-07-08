@@ -43,7 +43,7 @@ const windowStore = useWindowStore();
 </template>
 
 <style>
-@import '@/assets/styles/global.scss';
+@import '@/assets/styles/global.css';
 @layer base {
 	html,
 	body {
